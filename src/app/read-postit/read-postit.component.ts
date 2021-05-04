@@ -7,19 +7,24 @@ import { postIt } from "../app.component";
   styleUrls: ["./read-postit.component.css"]
 })
 export class ReadPostitComponent implements OnInit {
-  @Input() selezioneC: postIt;
   @Input() index: number;
   @Input() postItArr: Array<postIt>;
 
+  postIt1: postIt = new postIt();
+
   constructor() {}
 
+  leggi() {
+    this.postIt1.titolo = this.postItArr[this.index].titolo;
+    this.postIt1.mess = this.postItArr[this.index].mess;
+  }
   clean() {
-    this.selezioneC.titolo = undefined;
+    this.index = -1;
   }
 
   delete() {
     this.postItArr.splice(this.index, 1);
-    this.selezioneC.titolo = undefined;
+    this.index = -1;
   }
 
   ngOnInit() {}

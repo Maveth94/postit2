@@ -1,5 +1,8 @@
-<p *ngIf="selezioneC.titolo !== undefined">
-  Nel post-it {{selezioneC.titolo}} c'è scritto: <br> {{selezioneC.mess}} <br><br>
+<p *ngIf="index !== -1">
+  <script>
+    leggi();
+  </script>
+  Nel post-it {{postIt1.titolo}} c'è scritto: <br> {{postIt1.mess}} <br><br>
   <button (click)="clean()">Chiudi</button>
   <button (click) = "delete()"> Cancella </button>
 </p>
