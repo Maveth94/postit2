@@ -20,10 +20,12 @@ export class NewPostitComponent implements OnInit {
 
   conferma() {
     console.log("ciao");
+    /*
     this.newPost.titolo = document.getElementById("titolo").nodeValue;
     console.log(this.newPost.titolo);
     this.newPost.mess = document.getElementById("mess").innerHTML;
     console.log(this.newPost.mess);
+    */
   }
 
   ngOnInit() {}
