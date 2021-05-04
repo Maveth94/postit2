@@ -1,0 +1,11 @@
+<p *ngIf="selezioneA !== 0">
+  Inserisci informazioni nuovo Post-it: <br><br>
+ Inserisci titolo: <br>
+  <input id="titolo" type="text" /><br><br>
+  Inserisci messaggio: <br>
+  <textarea id="mess" rows="7" cols="40" maxlength="300"> </textarea><br><br>
+
+  <button id= "conferma" (click) = "conferma()">conferma</button>
+  <br><br>
+  <button id= "annulla" (click) = "annulla()">annulla</button>
+</p>

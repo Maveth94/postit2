@@ -12,7 +12,6 @@ export class postIt {
 })
 export class AppComponent {
   name = "Post-it";
-  //postIt : Array<string> = ["Ciao1", "Ciao2", "Ciao3"];
 
   PostIt1: postIt = {
     titolo: "Ciao1",
@@ -27,6 +26,7 @@ export class AppComponent {
   postItArr: Array<postIt> = [this.PostIt1, this.PostIt2];
 
   selezione1: postIt = new postIt();
+  selezione2: number = 0;
   index: number = -1;
 
   leggiMess(_title: string, _mess: string, _num: number) {
@@ -36,6 +36,6 @@ export class AppComponent {
   }
 
   creaPost() {
-    
+    this.selezione2 = 1;
   }
 }
