@@ -38,4 +38,8 @@ export class AppComponent {
   creaPost() {
     this.selezione2 = 1;
   }
+
+  azzera() {
+    this.selezione2 = 0;
+  }
 }
