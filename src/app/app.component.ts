@@ -34,4 +34,8 @@ export class AppComponent {
     this.selezione1.mess = _mess;
     this.index = _num;
   }
+
+  creaPost() {
+    
+  }
 }
