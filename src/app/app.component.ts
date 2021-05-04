@@ -26,11 +26,12 @@ export class AppComponent {
 
   postItArr: Array<postIt> = [this.PostIt1, this.PostIt2];
 
-  selezione: postIt = new postIt();
+  selezione1: postIt = new postIt();
+  index: number = -1;
 
-  leggiMess(_title: string, _mess: string) {
-    this.selezione.titolo = _title;
-
-    this.selezione.mess = _mess;
+  leggiMess(_title: string, _mess: string, _num: number) {
+    this.selezione1.titolo = _title;
+    this.selezione1.mess = _mess;
+    this.index = _num;
   }
 }

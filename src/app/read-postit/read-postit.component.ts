@@ -8,16 +8,17 @@ import { postIt } from "../app.component";
 })
 export class ReadPostitComponent implements OnInit {
   @Input() selezioneC: postIt;
-
-  /*
-  default: postIt = {
-    titolo: null,
-    mess: null
-  };*/
+  @Input() index: number;
+  @Input() postItArr: Array<postIt>;
 
   constructor() {}
 
   clean() {
+    this.selezioneC.titolo = undefined;
+  }
+
+  delete() {
+    this.postItArr.splice(this.index, 1);
     this.selezioneC.titolo = undefined;
   }
 
