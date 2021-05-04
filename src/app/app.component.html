@@ -1,0 +1,27 @@
+<hello name="{{ name }}"></hello>
+
+<ul name="butt">
+  <button id="New">Crea Nuovo</button>
+  <br />
+  <br />
+  <button id="Importanti">Visualizza importanti</button>
+</ul>
+
+<hr />
+
+<p>
+Qui verrà visualizzato il messaggio del post-it selezionato. 
+<app-read-postit [selezioneC]="selezione"> </app-read-postit>
+</p>
+
+<hr />
+
+<p>
+Cliccare sul titolo per leggere il contenuto
+</p>
+<ul *ngFor="let postIt of postItArr">
+  <button (click) = "leggiMess(postIt.titolo, postIt.mess)"> {{postIt.titolo}} </button>
+</ul>
+
+
+
