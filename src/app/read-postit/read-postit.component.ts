@@ -15,7 +15,7 @@ export class ReadPostitComponent implements OnInit {
 
   clean() {
     this.selezioneC.titolo = undefined;
-  }
+  } 
 
   delete() {
     this.postItArr.splice(this.index, 1);
