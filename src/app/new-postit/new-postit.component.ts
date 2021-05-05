@@ -35,7 +35,6 @@ export class NewPostitComponent implements OnInit {
       this.selezioneA = 0;
       this.nTit = "";
       this.nMess = "";
-      return;
     } else {
       alert("Dati mancanti o  scorretti, ritenta");
       return;

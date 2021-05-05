@@ -49,7 +49,14 @@ export class AppComponent {
   }
 
   addPost(newPost: postIt) {
-    this.postItArr.push(newPost);
+    //this.postItArr.push(newPost);
+    this.obj
+      .postData(this.postItArr)
+      .subscribe(
+        (postItArr: Array<postIt>) => {},
+        err => console.error("Observer got an error: " + err)
+      );
+    console.log(this.postItArr);
   }
 
   creaPost() {
