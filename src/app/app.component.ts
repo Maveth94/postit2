@@ -35,7 +35,6 @@ export class AppComponent {
     this.index = _num;
   }
 
-  
   addPost(newPost: postIt) {
     this.postItArr.push(newPost);
   }
