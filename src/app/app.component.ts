@@ -36,7 +36,7 @@ export class AppComponent {
   }
 
   
-  addCity(newPost: postIt) {
+  addPost(newPost: postIt) {
     this.postItArr.push(newPost);
   }
 

@@ -9,7 +9,7 @@ import { postIt } from "../app.component";
 export class NewPostitComponent implements OnInit {
   @Input() selezioneA: number;
   @Input() postItArr: Array<postIt>;
-  @Output() newCityEvent = new EventEmitter<postIt>();
+  @Output() newPostEvent = new EventEmitter<postIt>();
 
   newPost: postIt = new postIt();
 
@@ -23,11 +23,9 @@ export class NewPostitComponent implements OnInit {
     console.log(this.newPost.mess);
   }
 
-  newCity(newPost: postIt) {
-    this.newCityEvent.emit(newPost);
+  conferma() {
+    //this.newPostEvent.emit(newPost);
   }
-
-  conferma() {}
 
   constructor() {}
 
