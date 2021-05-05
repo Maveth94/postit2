@@ -14,8 +14,8 @@ export class NewPostitComponent implements OnInit {
   @Input() postItArr: Array<postIt>;
   @Output() newPostEvent = new EventEmitter<postIt>();
   newPost: postIt = new postIt();
-  nTit: string = "";
-  nMess: string = "";
+  //nTit: string = "";
+  //nMess: string = "";
 
   conferma(_tit: string, _mess: string) {
     //console.log(this.newPost.titolo);
@@ -26,7 +26,7 @@ export class NewPostitComponent implements OnInit {
     //this.nMess = _mess;
     this.newPost.titolo = _tit;
     this.newPost.mess = _mess;
-    //console.log("valore: " + typeof this.newPost.mess);
+    //console.log("valore: " + this.newPost.mess);
     if (
       this.newPost.titolo !== (undefined || "" || " " || null) &&
       this.newPost.mess !== (undefined || "" || " " || null)
