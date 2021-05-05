@@ -1,3 +1,6 @@
+import { ɵNullViewportScroller } from "@angular/common";
+import { NonNullAssert } from "@angular/compiler";
+import { NULL_EXPR } from "@angular/compiler/src/output/output_ast";
 import { Component, Input, OnInit, EventEmitter, Output } from "@angular/core";
 import { postIt } from "../app.component";
 
@@ -11,8 +14,8 @@ export class NewPostitComponent implements OnInit {
   @Input() postItArr: Array<postIt>;
   @Output() newPostEvent = new EventEmitter<postIt>();
   newPost: postIt = new postIt();
-  nTit: string = "";
-  nMess: string = "";
+  nTit: string = null;
+  nMess: string = null;
 
   newTitle(_title: string) {
     this.nTit = _title;
@@ -27,8 +30,8 @@ export class NewPostitComponent implements OnInit {
   conferma() {
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
-    console.log(this.newPost.titolo);
-    console.log(this.newPost.mess);
+    console.log("titolo: " + this.newPost.titolo);
+    console.log("mess: " + this.newPost.mess);
     //this.newPostEvent.emit(this.newPost);
   }
 
