@@ -26,15 +26,13 @@ export class NewPostitComponent implements OnInit {
     //this.nMess = _mess;
     this.newPost.titolo = _tit;
     this.newPost.mess = _mess;
-    console.log((this.newPost.mess = _mess));
+    console.log(this.newPost.mess);
     if (
       this.newPost.titolo !== (undefined || "" || " ") &&
       this.newPost.mess !== (undefined || "" || " ")
     ) {
       this.newPostEvent.emit(this.newPost);
       this.selezioneA = 0;
-      this.nTit = "";
-      this.nMess = "";
     } else {
       alert("Dati mancanti o  scorretti, ritenta");
       return;
