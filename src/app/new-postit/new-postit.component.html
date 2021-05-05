@@ -7,12 +7,13 @@
   <input #nuovoMess (keyup.enter)="newMess(nuovoMess.value) ;nuovoMess.value=''" />
   <br><br>
 
-  titolo scelto: {{newPost.titolo}}
+  titolo scelto: {{newPost.titolo}} <br>
   messaggio: {{newPost.mess}}
   <br><br>
   Premere conferma per memorizzare il post-it
+  <br><br>
 
-<button  id= "conferma" (click) = "conferma()">conferma</button>
-<br><br>
-<button id= "annulla" (click) = "annulla()">annulla</button>
+  <button  id= "conferma" (click) = "conferma()">conferma</button>
+  <br><br>
+  <button id= "annulla" (click) = "annulla()">annulla</button>
 </p>
