@@ -1,16 +1,16 @@
 <p *ngIf="selezioneA !== 0">
   Inserisci informazioni nuovo Post-it: <br><br>
  Inserire titolo: <br>
-  <input id = "nTit"/>
+  <input #nTit/>
   <br><br>
   Inserire messaggio: <br>
-  <input id = "nMess" />
+  <input #nMess />
   <br><br>
 
   Premere conferma per memorizzare  il post-it
   <br><br>
 
-  <button  id= "conferma" (click) = "conferma()">conferma</button>
+  <button  id= "conferma" (click) = "conferma(nTit.value, nMess.value); nTit.value='';nMess.value=''">conferma</button>
   <br><br>
   <button id= "annulla" (click) = "annulla()">annulla</button>
 </p>

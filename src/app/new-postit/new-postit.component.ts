@@ -17,15 +17,15 @@ export class NewPostitComponent implements OnInit {
   nTit: string = "";
   nMess: string = "";
 
-  conferma() {
+  conferma(_tit: string, _mess: string) {
     //console.log(this.newPost.titolo);
     //ho dovuto fare un casr altrimenti l'elemento mi veniva passato come HTMLElement
     //quindi senza l'attributo value
-    this.nTit = (<HTMLInputElement>document.getElementById("nTit")).value;
+    //this.nTit = _tit;
     //console.log("titolo: " + this.nTit);
-    this.nMess = (<HTMLInputElement>document.getElementById("nMess")).value;
-    this.newPost.titolo = this.nTit;
-    this.newPost.mess = this.nMess;
+    //this.nMess = _mess;
+    this.newPost.titolo = _tit;
+    this.newPost.mess = _mess;
     if (
       this.newPost.titolo !== (undefined || "" || " ") &&
       this.newPost.mess !== (undefined || "" || " ")
