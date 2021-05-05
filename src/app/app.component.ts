@@ -1,4 +1,5 @@
 import { Component, VERSION } from "@angular/core";
+import { ChuckService } from "./postit.service";
 
 export class postIt {
   titolo: string;
@@ -13,6 +14,9 @@ export class postIt {
 export class AppComponent {
   name = "Post-it";
 
+  postItArr: Array<postIt> = [];
+
+  /*
   PostIt1: postIt = {
     titolo: "Ciao1",
     mess: "come va"
@@ -21,9 +25,18 @@ export class AppComponent {
   PostIt2: postIt = {
     titolo: "Ciao2",
     mess: "sglfha"
-  };
+  };*/
 
-  postItArr: Array<postIt> = [this.PostIt1, this.PostIt2];
+  constructor(private obj: ChuckService) {}
+
+  getData() {
+    this.obj.getData().subscribe(
+      (x: any) => {
+        this.postItArr = x;
+      },
+      err => console.error("Observer got an error: " + err)
+    );
+  }
 
   selezione1: postIt = new postIt();
   selezione2: number = 0;
