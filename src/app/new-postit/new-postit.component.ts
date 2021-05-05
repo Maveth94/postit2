@@ -28,12 +28,18 @@ export class NewPostitComponent implements OnInit {
   }
 
   conferma() {
+    console.log(this.newPost.titolo)
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
-    this.newPostEvent.emit(this.newPost);
-    this.selezioneA = 0;
-    this.nTit = "";
-    this.nMess = "";
+    if (this.newPost.titolo !== "" && this.newPost.mess !== "") {
+      this.newPostEvent.emit(this.newPost);
+      this.selezioneA = 0;
+      this.nTit = "";
+      this.nMess = "";
+    } else {
+      //alert dati mancanti
+      return;
+    }
   }
 
   constructor() {}
