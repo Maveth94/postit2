@@ -7,7 +7,7 @@
   <input #nuovoMess (keyup.enter)="newMess(nuovoMess.value) ;nuovoMess.value=''" />
   <br><br>
 </p>
-<p *ngIf="(newPost.titolo !== null && newPost.mess !== null) ">
+<p *ngIf="(newPost.titolo !== '' && newPost.mess !== '') ">
   titolo scelto: {{newPost.titolo}}
   messaggio: {{newPost.mess}}
   <br><br>

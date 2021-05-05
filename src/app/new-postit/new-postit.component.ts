@@ -14,8 +14,8 @@ export class NewPostitComponent implements OnInit {
   @Input() postItArr: Array<postIt>;
   @Output() newPostEvent = new EventEmitter<postIt>();
   newPost: postIt = new postIt();
-  nTit: string = null;
-  nMess: string = null;
+  nTit: string = "";
+  nMess: string = "";
 
   newTitle(_title: string) {
     this.nTit = _title;
