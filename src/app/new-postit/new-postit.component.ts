@@ -35,21 +35,9 @@ export class NewPostitComponent implements OnInit {
     //this.newPostEvent.emit(this.newPost);
   }
 
-  /*
-  newTitle(_title: string) {
-    this.newPost.titolo = _title;
-    console.log(this.newPost.titolo);
-  }
 
-  newMess(_mess: string) {
-    this.newPost.mess = _mess;
-    console.log(this.newPost.mess);
-  }
 
-  conferma() {
-    //this.newPostEvent.emit(newPost);
-  }
-*/
+ 
   constructor() {}
 
   annulla() {
