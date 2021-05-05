@@ -25,10 +25,10 @@ export class NewPostitComponent implements OnInit {
   newMess(_mess: string) {
     this.nMess = _mess;
     console.log(this.newPost.mess);
-  }
+  } 
 
   conferma() {
-    console.log(this.newPost.titolo)
+    console.log(this.newPost.titolo);
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
     if (this.newPost.titolo !== "" && this.newPost.mess !== "") {
