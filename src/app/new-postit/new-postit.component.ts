@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, EventEmitter, Output } from "@angular/core";
 import { postIt } from "../app.component";
 
 @Component({
@@ -9,7 +9,26 @@ import { postIt } from "../app.component";
 export class NewPostitComponent implements OnInit {
   @Input() selezioneA: number;
   @Input() postItArr: Array<postIt>;
-  newPost: postIt = new postIt();
+  @Output() newCityEvent = new EventEmitter<postIt>();
+
+newPost: postIt = new postIt();
+
+
+  newTitle(_title: string){
+    this.newPost.titolo = _title;
+  }
+
+  newMess(_mess: string){
+    this.newPost.mess = _mess;
+  }
+
+  
+
+
+  newCity(newPost: postIt) {
+    this.newCityEvent.emit(newPost);
+  }
+  
 
   constructor() {}
 
@@ -18,15 +37,6 @@ export class NewPostitComponent implements OnInit {
     this.selezioneA = 0;
   }
 
-  conferma() {
-    console.log("ciao");
-    /*
-    this.newPost.titolo = document.getElementById("titolo").nodeValue;
-    console.log(this.newPost.titolo);
-    this.newPost.mess = document.getElementById("mess").innerHTML;
-    console.log(this.newPost.mess);
-    */
-  }
 
   ngOnInit() {}
 }

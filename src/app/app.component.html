@@ -25,4 +25,4 @@
 </ul>
 <hr />
 
-<app-new-postit [selezioneA]="selezione2" [postItArr]="postItArr"> </app-new-postit>
+<app-new-postit (newCityEvent)="addCity($event)"> </app-new-postit>
