@@ -10,9 +10,29 @@ export class NewPostitComponent implements OnInit {
   @Input() selezioneA: number;
   @Input() postItArr: Array<postIt>;
   @Output() newPostEvent = new EventEmitter<postIt>();
-
   newPost: postIt = new postIt();
+  nTit: string = "";
+  nMess: string = "";
 
+  newTitle(_title: string) {
+    this.nTit = _title;
+    console.log(this.nTit);
+  }
+
+  newMess(_mess: string) {
+    this.nMess = _mess;
+    console.log(this.nMess);
+  }
+
+  conferma() {
+    this.newPost.titolo = this.nTit;
+    this.newPost.mess = this.nMess;
+    console.log(this.newPost.titolo);
+    console.log(this.newPost.mess);
+    //this.newPostEvent.emit(this.newPost);
+  }
+
+  /*
   newTitle(_title: string) {
     this.newPost.titolo = _title;
     console.log(this.newPost.titolo);
@@ -26,7 +46,7 @@ export class NewPostitComponent implements OnInit {
   conferma() {
     //this.newPostEvent.emit(newPost);
   }
-
+*/
   constructor() {}
 
   annulla() {
