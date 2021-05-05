@@ -32,12 +32,9 @@ export class NewPostitComponent implements OnInit {
     this.newPost.mess = this.nMess;
     console.log("titolo: " + this.newPost.titolo);
     console.log("mess: " + this.newPost.mess);
-    //this.newPostEvent.emit(this.newPost);
+    this.newPostEvent.emit(this.newPost);
   }
 
-
-
- 
   constructor() {}
 
   annulla() {
