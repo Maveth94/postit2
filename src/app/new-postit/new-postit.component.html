@@ -6,18 +6,13 @@
   Inserire messaggio e premere invio: <br>
   <input #nuovoMess (keyup.enter)="newMess(nuovoMess.value) ;nuovoMess.value=''" />
   <br><br>
-</p>
-<p *ngIf="(newPost.titolo !== '' && newPost.mess !== '') ">
+
   titolo scelto: {{newPost.titolo}}
   messaggio: {{newPost.mess}}
   <br><br>
   Premere conferma per memorizzare il post-it
-</p>
-
-
-
-
 
 <button  id= "conferma" (click) = "conferma()">conferma</button>
 <br><br>
 <button id= "annulla" (click) = "annulla()">annulla</button>
+</p>
