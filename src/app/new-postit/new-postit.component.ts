@@ -14,6 +14,7 @@ export class NewPostitComponent implements OnInit {
   @Input() postItArr: Array<postIt>;
   @Output() newPostEvent = new EventEmitter<postIt>();
   newPost: postIt = new postIt();
+
   nTit: string = "";
   nMess: string = "";
 
@@ -34,6 +35,7 @@ export class NewPostitComponent implements OnInit {
       this.selezioneA = 0;
       this.nTit = "";
       this.nMess = "";
+      return;
     } else {
       alert("Dati mancanti o  scorretti, ritenta");
       return;
