@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class ChuckService {
-  apiURL: string = "https://api.keyvalue.xyz/5d26258c/myKey";
+  apiURL: string = "https://api.keyvalue.xyz/0e1f160e/myKey";
   constructor(private http: HttpClient) {}
 
   public getData(): Observable<Object> {
