@@ -31,6 +31,7 @@ export class NewPostitComponent implements OnInit {
       this.newPost.mess !== (undefined || "" || " ")
     ) {
       this.newPostEvent.emit(this.newPost);
+      this.newPost = null;
       this.selezioneA = 0;
       this.nTit = "";
       this.nMess = "";
