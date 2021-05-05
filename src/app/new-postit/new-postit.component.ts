@@ -18,25 +18,24 @@ export class NewPostitComponent implements OnInit {
   nMess: string = "";
 
   conferma() {
-    console.log(this.newPost.titolo);
+    //console.log(this.newPost.titolo);
     //ho dovuto fare un casr altrimenti l'elemento mi veniva passato come HTMLElement
     //quindi senza l'attributo value
     this.nTit = (<HTMLInputElement>document.getElementById("nTit")).value;
-    console.log("titolo: " + this.nTit);
+    //console.log("titolo: " + this.nTit);
     this.nMess = (<HTMLInputElement>document.getElementById("nMess")).value;
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
     if (
-      this.newPost.titolo !== (undefined || "") &&
-      this.newPost.mess !== (undefined || "")
+      this.newPost.titolo !== (undefined || "" || " ") &&
+      this.newPost.mess !== (undefined || "" || " ")
     ) {
       this.newPostEvent.emit(this.newPost);
       this.selezioneA = 0;
       this.nTit = "";
       this.nMess = "";
     } else {
-      alert("Dati mancanti, ritenta");
-      //alert dati mancanti
+      alert("Dati mancanti o  scorretti, ritenta");
       return;
     }
   }
