@@ -26,6 +26,7 @@ export class NewPostitComponent implements OnInit {
     //this.nMess = _mess;
     this.newPost.titolo = _tit;
     this.newPost.mess = _mess;
+    console.log((this.newPost.mess = _mess));
     if (
       this.newPost.titolo !== (undefined || "" || " ") &&
       this.newPost.mess !== (undefined || "" || " ")
