@@ -31,7 +31,7 @@ export class NewPostitComponent implements OnInit {
     console.log(this.newPost.titolo);
     this.nTit = (<HTMLInputElement>document.getElementById("nTit")).value;
     console.log(this.nTit);
-    this.nMess = document.getElementById("nMess").innerHTML;
+    this.nMess = (<HTMLInputElement>document.getElementById("nMess")).value;
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
     if (
