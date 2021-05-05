@@ -31,6 +31,7 @@ export class NewPostitComponent implements OnInit {
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
     this.newPostEvent.emit(this.newPost);
+    this.selezioneA = 0;
     this.nTit = "";
     this.nMess = "";
   }
