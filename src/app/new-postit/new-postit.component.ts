@@ -11,7 +11,6 @@ import { postIt } from "../app.component";
 })
 export class NewPostitComponent implements OnInit {
   @Input() selezioneA: number;
-  @Input() postItArr: Array<postIt>;
   @Output() newPostEvent = new EventEmitter<postIt>();
   newPost: postIt = new postIt();
 
