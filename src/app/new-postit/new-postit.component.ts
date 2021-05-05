@@ -29,6 +29,8 @@ export class NewPostitComponent implements OnInit {
 
   conferma() {
     console.log(this.newPost.titolo);
+    this.nTit = document.getElementById("nTit").innerHTML;
+    this.nMess = document.getElementById("nMess").innerHTML;
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
     if (
