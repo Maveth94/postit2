@@ -1,6 +1,3 @@
-import { ɵNullViewportScroller } from "@angular/common";
-import { NonNullAssert } from "@angular/compiler";
-import { NULL_EXPR } from "@angular/compiler/src/output/output_ast";
 import { Component, Input, OnInit, EventEmitter, Output } from "@angular/core";
 import { postIt } from "../app.component";
 
@@ -31,7 +28,6 @@ export class NewPostitComponent implements OnInit {
       this.newPost.mess !== (undefined || "" || " ")
     ) {
       this.newPostEvent.emit(this.newPost);
-      this.newPost = null;
       this.selezioneA = 0;
       this.nTit = "";
       this.nMess = "";
