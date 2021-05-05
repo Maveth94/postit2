@@ -30,9 +30,9 @@ export class NewPostitComponent implements OnInit {
   conferma() {
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
-    console.log("titolo: " + this.newPost.titolo);
-    console.log("mess: " + this.newPost.mess);
     this.newPostEvent.emit(this.newPost);
+    this.nTit = "";
+    this.nMess = "";
   }
 
   constructor() {}
