@@ -1,7 +1,7 @@
 <p *ngIf="selezioneA !== 0">
   Inserisci informazioni nuovo Post-it: <br><br>
  Inserire titolo e premere invio: <br>
-  <input #nuovoTitolo (keyup.enter)= "newTitle(nuovoTitolo.value) ;newTitle.value=''" />
+  <input #nuovoTitolo (keyup.enter)="newTitle(nuovoTitolo.value) ;nuovoTitolo.value=''" />
   <br><br>
   Inserire messaggio e premere invio: <br>
   <input #nuovoMess (keyup.enter)="newMess(nuovoMess.value) ;nuovoMess.value=''" />

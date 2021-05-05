@@ -17,16 +17,15 @@ export class NewPostitComponent implements OnInit {
   nTit: string = "";
   nMess: string = "";
 
-   newTitle(_title: string) {
-    this.newPost.titolo = _title;
+  newTitle(_title: string) {
+    this.nTit = _title;
     console.log(this.newPost.titolo);
   }
 
   newMess(_mess: string) {
-    this.newPost.mess = _mess;
+    this.nMess = _mess;
     console.log(this.newPost.mess);
   }
-
 
   conferma() {
     this.newPost.titolo = this.nTit;
