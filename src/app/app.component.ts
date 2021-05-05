@@ -3,7 +3,6 @@ import { Component, VERSION } from "@angular/core";
 export class postIt {
   titolo: string;
   mess: string;
-
 }
 
 @Component({
@@ -36,8 +35,13 @@ export class AppComponent {
     this.index = _num;
   }
 
+  
   addCity(newPost: postIt) {
     this.postItArr.push(newPost);
+  }
+
+  creaPost() {
+    this.selezione2 = 1;
   }
 
   azzera() {

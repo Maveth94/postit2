@@ -2,14 +2,15 @@
   Inserisci informazioni nuovo Post-it: <br><br>
  Inserisci titolo: <br>
   <input #nuovoTitolo (keyup.enter)="newTitle(nuovoTitolo.value) ;nuovoTitolo.value=''" />
-  <input #nuovoMess (keyup.enter)="newTitle(nuovoMess.value) ;nuovoMess.value=''" />
+  <br><br>
+  <input #nuovoMess (keyup.enter)="newMess(nuovoMess.value) ;nuovoMess.value=''" />
 
 
   Inserisci messaggio: <br>
 
-  <!--
+ 
   <button  id= "conferma" (click) = "conferma()">conferma</button>
   <br><br>
   <button id= "annulla" (click) = "annulla()">annulla</button>
-  -->
+ 
 </p>

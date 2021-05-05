@@ -11,24 +11,21 @@ export class NewPostitComponent implements OnInit {
   @Input() postItArr: Array<postIt>;
   @Output() newCityEvent = new EventEmitter<postIt>();
 
-newPost: postIt = new postIt();
+  newPost: postIt = new postIt();
 
-
-  newTitle(_title: string){
+  newTitle(_title: string) {
     this.newPost.titolo = _title;
   }
 
-  newMess(_mess: string){
+  newMess(_mess: string) {
     this.newPost.mess = _mess;
   }
-
-  
-
 
   newCity(newPost: postIt) {
     this.newCityEvent.emit(newPost);
   }
-  
+
+  conferma() {}
 
   constructor() {}
 
@@ -36,7 +33,6 @@ newPost: postIt = new postIt();
     //console.log(this.selezioneA);
     this.selezioneA = 0;
   }
-
 
   ngOnInit() {}
 }
