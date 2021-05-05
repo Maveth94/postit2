@@ -1,24 +1,19 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { LocalizedString } from "@angular/compiler";
 
 @Injectable({
   providedIn: "root"
 })
 export class ChuckService {
-  apiURLTot: string = "https://api.keyvalue.xyz/0e1f160e/myKey";
-  apiURL: string = "https://api.keyvalue.xyz/";
-  apiKey: string = "0e1f160e";
-  apiEnd: string = "/myKey";
-
+  apiURL: string = "https://api.keyvalue.xyz/5d26258c/myKey";
   constructor(private http: HttpClient) {}
 
   public getData(): Observable<Object> {
-    return this.http.get(this.apiURLTot);
+    return this.http.get(this.apiURL);
   }
 
   public postData(obj: Object): Observable<Object> {
-    return this.http.post(this.apiURLTot, obj);
+    return this.http.post(this.apiURL, obj);
   }
 }

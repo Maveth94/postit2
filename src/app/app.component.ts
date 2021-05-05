@@ -28,7 +28,7 @@ export class AppComponent {
   };*/
 
   constructor(private obj: ChuckService) {}
-
+/*
   getData() {
     this.obj.getData().subscribe(
       (x: any) => {
@@ -37,6 +37,7 @@ export class AppComponent {
       err => console.error("Observer got an error: " + err)
     );
   }
+  */
 
   selezione1: postIt = new postIt();
   selezione2: number = 0;
