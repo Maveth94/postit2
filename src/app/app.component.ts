@@ -29,6 +29,15 @@ export class AppComponent {
     );
   }
 
+  postData() {
+    this.obj
+      .postData(this.postItArr)
+      .subscribe(
+        (postItArr: Array<postIt>) => {},
+        err => console.error('Observer got an error: ' + err)
+      );
+  }
+
   Data = this.getData();
 
   selezione1: postIt = new postIt();
@@ -62,15 +71,6 @@ export class AppComponent {
       document.getElementById('Importanti').innerHTML = 'Visualizza tutti';
       //console.log(this.visImp);
     }
-  }
-
-  postData() {
-    this.obj
-      .postData(this.postItArr)
-      .subscribe(
-        (postItArr: Array<postIt>) => {},
-        err => console.error('Observer got an error: ' + err)
-      );
   }
 
   creaPost() {

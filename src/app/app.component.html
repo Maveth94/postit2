@@ -11,7 +11,8 @@
 
 <p>
   Qui verrà visualizzato il messaggio del post-it selezionato.
-  <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr"> </app-read-postit>
+  <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr" script="postData()">
+  </app-read-postit>
 </p>
 
 
@@ -22,16 +23,16 @@
 </p>
 
 <div *ngIf="visImp == false ;else other_content">
-<ul *ngFor="let postIt of postItArr">
-  <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
-</ul>
+  <ul *ngFor="let postIt of postItArr">
+    <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+  </ul>
 </div>
 
 <ng-template #other_content>
   <ul *ngFor="let postIt of postItArr">
     <div *ngIf="postIt.imp == true">
-  <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
-  </div>
+      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+    </div>
   </ul>
 </ng-template>
 
