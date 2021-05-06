@@ -47,7 +47,7 @@ export class AppComponent {
         (postItArr: Array<postIt>) => {},
         err => console.error("Observer got an error: " + err)
       );
-    console.log(this.postItArr);
+    //console.log(this.postItArr);
   }
 
   addPost(newPost: postIt) {
@@ -58,7 +58,7 @@ export class AppComponent {
         (postItArr: Array<postIt>) => {},
         err => console.error("Observer got an error: " + err)
       );
-    console.log(this.postItArr);
+    //console.log(this.postItArr);
   }
 
   impor() {
