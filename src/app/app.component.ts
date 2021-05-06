@@ -41,24 +41,14 @@ export class AppComponent {
     this.selezione1.mess = _mess;
     this.selezione1.imp = _imp;
     this.index = _num;
-    this.obj
-      .postData(this.postItArr)
-      .subscribe(
-        (postItArr: Array<postIt>) => {},
-        err => console.error('Observer got an error: ' + err)
-      );
+    this.postData();
+
     //console.log(this.postItArr);
   }
 
   addPost(newPost: postIt) {
     this.postItArr.push(newPost);
-    this.obj
-      .postData(this.postItArr)
-      .subscribe(
-        (postItArr: Array<postIt>) => {},
-        err => console.error('Observer got an error: ' + err)
-      );
-    //console.log(this.postItArr);
+    this.postData();
   }
 
   impor() {
@@ -72,6 +62,15 @@ export class AppComponent {
       document.getElementById('Importanti').innerHTML = 'Visualizza tutti';
       //console.log(this.visImp);
     }
+  }
+
+  postData() {
+    this.obj
+      .postData(this.postItArr)
+      .subscribe(
+        (postItArr: Array<postIt>) => {},
+        err => console.error('Observer got an error: ' + err)
+      );
   }
 
   creaPost() {
