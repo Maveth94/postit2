@@ -5,36 +5,40 @@
   <br />
   <br />
   <button (click)= "impor()">Visualizza importanti</button>
+  <!--
   <button (click)= "tutti()">Visualizza tutti</button>
 </ul>
+-->
 
-<hr />
+  <hr />
 
-<p>
   Qui verrà visualizzato il messaggio del post-it selezionato.
-  <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr"> </app-read-postit>
-</p>
+  <div *ngIf="soloImp == 1; else content1">
+    <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr"> </app-read-postit>
+  </div>
+  <ng-template #content1>
+    <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArrImp"> </app-read-postit>
+  </ng-template>
+
+  <hr />
+
+  <p>
+    Cliccare sul titolo per leggere il contenuto
+  </p>
+  <div *ngIf="soloImp == 1; else other_content">
+    <ul *ngFor="let postIt of postItArr">
+      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+    </ul>
+  </div>
+  <ng-template #other_content>
+    <ul *ngFor="let postIt of postItArrImp">
+      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+    </ul>
+  </ng-template>
+
+  <hr />
 
 
-<hr />
-
-<p>
-  Cliccare sul titolo per leggere il contenuto
-</p>
-<div *ngIf="soloImp == false; else other_content">
-   <ul *ngFor="let postIt of postItArr">
-  <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
-  </ul>
-</div>
-<ng-template #other_content>
-  <ul *ngFor="let postIt of postItArrImp">
-    <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
-  </ul>
-</ng-template>
-
-<hr />
 
 
-
-
-<app-new-postit [selezioneA]="selezione2" (newPostEvent)="addPost($event)"> </app-new-postit>
+  <app-new-postit [selezioneA]="selezione2" (newPostEvent)="addPost($event)"> </app-new-postit>
