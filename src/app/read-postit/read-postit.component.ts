@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { postIt } from "../app.component";
+import { Component, Input, OnInit } from '@angular/core';
+import { postIt } from '../app.component';
 
 @Component({
-  selector: "app-read-postit",
-  templateUrl: "./read-postit.component.html",
-  styleUrls: ["./read-postit.component.css"]
+  selector: 'app-read-postit',
+  templateUrl: './read-postit.component.html',
+  styleUrls: ['./read-postit.component.css']
 })
 export class ReadPostitComponent implements OnInit {
   @Input() selezioneC: postIt;

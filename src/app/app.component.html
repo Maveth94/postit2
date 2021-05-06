@@ -11,7 +11,7 @@
 
 <p>
   Qui verrà visualizzato il messaggio del post-it selezionato.
-  <app-read-postit [selezioneC]="selezione1" [index]="index" [] = "" [postItArr]="postItArr"> </app-read-postit>
+  <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr"> </app-read-postit>
 </p>
 
 
@@ -20,9 +20,20 @@
 <p>
   Cliccare sul titolo per leggere il contenuto
 </p>
+
+<div *ngIf="visImp == false ;else other_content">
 <ul *ngFor="let postIt of postItArr">
   <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
 </ul>
+</div>
+
+<ng-template #other_content>
+  <ul *ngFor="let postIt of postItArr">
+    <div *ngIf="postIt.imp == true">
+  <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+  </div>
+  </ul>
+</ng-template>
 
 <hr />
 

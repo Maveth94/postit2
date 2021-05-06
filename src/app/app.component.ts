@@ -1,6 +1,6 @@
-import { Component, VERSION } from "@angular/core";
-import { findParentClassDeclaration } from "@angular/core/schematics/utils/typescript/class_declaration";
-import { ChuckService } from "./postit.service";
+import { Component, VERSION } from '@angular/core';
+import { findParentClassDeclaration } from '@angular/core/schematics/utils/typescript/class_declaration';
+import { ChuckService } from './postit.service';
 
 export class postIt {
   titolo: string;
@@ -9,12 +9,12 @@ export class postIt {
 }
 
 @Component({
-  selector: "my-app",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = "Post-it";
+  name = 'Post-it';
 
   postItArr: Array<postIt> = [];
 
@@ -25,7 +25,7 @@ export class AppComponent {
       (x: any) => {
         this.postItArr = x;
       },
-      err => console.error("Observer got an error: " + err)
+      err => console.error('Observer got an error: ' + err)
     );
   }
 
@@ -45,9 +45,9 @@ export class AppComponent {
       .postData(this.postItArr)
       .subscribe(
         (postItArr: Array<postIt>) => {},
-        err => console.error("Observer got an error: " + err)
+        err => console.error('Observer got an error: ' + err)
       );
-    console.log(this.postItArr);
+    //console.log(this.postItArr);
   }
 
   addPost(newPost: postIt) {
@@ -56,19 +56,22 @@ export class AppComponent {
       .postData(this.postItArr)
       .subscribe(
         (postItArr: Array<postIt>) => {},
-        err => console.error("Observer got an error: " + err)
+        err => console.error('Observer got an error: ' + err)
       );
-    console.log(this.postItArr);
+    //console.log(this.postItArr);
   }
 
   impor() {
-    if (this.visImp == true){
+    if (this.visImp == true) {
       this.visImp = false;
-    }
-    if (this.visImp == false){
+      //console.log(this.visImp);
+      document.getElementById('Importanti').innerHTML = 'Visualizza importanti';
+      return;
+    } else {
       this.visImp = true;
+      document.getElementById('Importanti').innerHTML = 'Visualizza tutti';
+      //console.log(this.visImp);
     }
-    
   }
 
   creaPost() {
