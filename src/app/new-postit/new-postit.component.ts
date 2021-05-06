@@ -9,12 +9,13 @@ import { postIt } from "../app.component";
 export class NewPostitComponent implements OnInit {
   @Input() selezioneA: number;
   @Output() newPostEvent = new EventEmitter<postIt>();
-  newPost: postIt = new postIt();
+  newPost: postIt;
 
   nTit: string = "";
   nMess: string = "";
 
   conferma() {
+    this.newPost = new postIt();
     //console.log(this.newPost.titolo);
     //ho dovuto fare un casr altrimenti l'elemento mi veniva passato come HTMLElement
     //quindi senza l'attributo value
