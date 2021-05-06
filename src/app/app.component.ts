@@ -38,6 +38,13 @@ export class AppComponent {
     this.selezione1.titolo = _title;
     this.selezione1.mess = _mess;
     this.index = _num;
+    this.obj
+      .postData(this.postItArr)
+      .subscribe(
+        (postItArr: object) => {},
+        err => console.error("Observer got an error: " + err)
+      );
+    console.log(this.postItArr);
   }
 
   addPost(newPost: postIt) {
