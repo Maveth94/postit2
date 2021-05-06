@@ -33,6 +33,7 @@ export class AppComponent {
     this.obj.getData().subscribe(
       (x: any) => {
         this.postItArr = x;
+        console.log(this.postItArr);
       },
       err => console.error("Observer got an error: " + err)
     );
