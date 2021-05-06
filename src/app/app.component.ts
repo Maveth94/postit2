@@ -21,7 +21,7 @@ export class AppComponent {
   selezione1: postIt = new postIt();
   selezione2: number = 0;
   index: number = -1;
-  soloImp: number = 0;
+  soloImp: boolean = false;
 
   constructor(private obj: ChuckService) {}
 
@@ -64,20 +64,7 @@ export class AppComponent {
   
 
   impor() {
-    if (this.soloImp == 0) {
-      this.soloImp = 1;
-      document.getElementById('visImp').innerHTML = 'Visualizza tutti';
-      for (let post of this.postItArr) {
-        if (post.imp == true) {
-          this.postItArrImp.push(post);
-        }
-      }
-    } else {
-      document.getElementById('visImp').innerHTML = 'Visualizza importanti';
-      this.postItArrImp = [];
-      this.soloImp = 0;
-    }
-    //console.log(this.postItArrImp);
+    
   }
 
 
