@@ -1,13 +1,14 @@
 <p *ngIf="selezioneA !== 0">
   Inserisci informazioni nuovo Post-it: <br><br>
  Inserire titolo: <br>
-  <input id = "nTit" value = ''/>
+  <input #nTit value = ''/>
   <br><br>
   Inserire messaggio: <br>
-  <input id = "nMess" value = ''/>
+  <input  #nMess value = ''/>
   <br><br>
   Spuntare il box per segnare il postit come importante
-  <input type="checkbox" id="check" >
+  <br>
+  <input type="checkbox" #nImp checked>
 
   <br><br>
 
@@ -16,7 +17,7 @@
   Premere conferma per memorizzare  il post-it
   <br><br>
 
-  <button  id= "conferma" (click) = "conferma()">conferma</button>
+  <button  id= "conferma" (click) = "conferma(nTit.value, nMess.value, nImp.value)">conferma</button>
   <br><br>
   <button id= "annulla" (click) = "annulla()">annulla</button>
 </p>
