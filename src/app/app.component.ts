@@ -16,6 +16,7 @@ export class AppComponent {
   name = "Post-it";
 
   postItArr: Array<postIt> = [];
+  postItArrImp: Array<postIt> = [];
 
   constructor(private obj: ChuckService) {}
 
@@ -57,6 +58,15 @@ export class AppComponent {
         err => console.error("Observer got an error: " + err)
       );
     console.log(this.postItArr);
+  }
+
+  impor() {
+    for (let post of this.postItArr) {
+      if (post.imp == true) {
+        this.postItArrImp.push(post);
+      }
+    }
+    console.log(this.postItArrImp);
   }
 
   creaPost() {
