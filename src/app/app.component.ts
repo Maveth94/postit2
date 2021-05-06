@@ -61,6 +61,8 @@ export class AppComponent {
     //console.log(this.postItArr);
   }
 
+  
+
   impor() {
     if (this.soloImp == 0) {
       this.soloImp = 1;
@@ -71,23 +73,6 @@ export class AppComponent {
         }
       }
     } else {
-      this.confrontaArr();
-      /*
-      for (let post1 of this.postItArr){
-        if (post1.imp==true){
-          for (let post2 of this.postItArrImp) {
-
-            if ( post1.titolo == post2.titolo){
-              num = 1;
-              continue;
-              //this.postItArr.splice(this.postItArr.indexOf(post1), 1);
-            } 
-            else {
-              continue;
-            }
-          }
-        }
-      }*/
       document.getElementById('visImp').innerHTML = 'Visualizza importanti';
       this.postItArrImp = [];
       this.soloImp = 0;
@@ -95,26 +80,6 @@ export class AppComponent {
     //console.log(this.postItArrImp);
   }
 
-  confrontaArr() {
-    var num: number = 0;
-    var index1: number;
-    var index2: number;
-    for (let post1 of this.postItArr) {
-      if (post1.imp == true) {
-        index1 = this.postItArr.indexOf(post1);
-        for (let post2 of this.postItArrImp) {
-          if (post1.titolo == post2.titolo) {
-            num = 1;
-            continue;
-          }
-        }
-        if (num == 0) {
-          console.log(index1);
-          //this.postItArr.splice(index1, 1);
-        }
-      }
-    }
-  }
 
   creaPost() {
     this.selezione2 = 1;
