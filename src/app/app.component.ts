@@ -1,5 +1,5 @@
-import { Component, VERSION } from "@angular/core";
-import { ChuckService } from "./postit.service";
+import { Component, VERSION } from '@angular/core';
+import { ChuckService } from './postit.service';
 
 export class postIt {
   titolo: string;
@@ -8,12 +8,12 @@ export class postIt {
 }
 
 @Component({
-  selector: "my-app",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = "Post-it";
+  name = 'Post-it';
 
   postItArr: Array<postIt> = [];
   postItArrImp: Array<postIt> = [];
@@ -30,7 +30,7 @@ export class AppComponent {
       (x: any) => {
         this.postItArr = x;
       },
-      err => console.error("Observer got an error: " + err)
+      err => console.error('Observer got an error: ' + err)
     );
   }
 
@@ -45,7 +45,7 @@ export class AppComponent {
       .postData(this.postItArr)
       .subscribe(
         (postItArr: Array<postIt>) => {},
-        err => console.error("Observer got an error: " + err)
+        err => console.error('Observer got an error: ' + err)
       );
     //console.log(this.postItArr);
   }
@@ -56,7 +56,7 @@ export class AppComponent {
       .postData(this.postItArr)
       .subscribe(
         (postItArr: Array<postIt>) => {},
-        err => console.error("Observer got an error: " + err)
+        err => console.error('Observer got an error: ' + err)
       );
     //console.log(this.postItArr);
   }
@@ -64,7 +64,7 @@ export class AppComponent {
   impor() {
     if (this.soloImp == 0) {
       this.soloImp = 1;
-      document.getElementById("visImp").innerHTML = "Visualizza tutti";
+      document.getElementById('visImp').innerHTML = 'Visualizza tutti';
       for (let post of this.postItArr) {
         if (post.imp == true) {
           this.postItArrImp.push(post);
@@ -88,11 +88,11 @@ export class AppComponent {
           }
         }
       }*/
-      document.getElementById("visImp").innerHTML = "Visualizza importanti";
+      document.getElementById('visImp').innerHTML = 'Visualizza importanti';
       this.postItArrImp = [];
       this.soloImp = 0;
     }
-    console.log(this.postItArrImp);
+    //console.log(this.postItArrImp);
   }
 
   confrontaArr() {

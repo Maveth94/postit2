@@ -32,7 +32,7 @@
   </div>
   <ng-template #other_content>
     <ul *ngFor="let postIt of postItArrImp">
-      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArrImp.indexOf(postIt))"> {{postIt.titolo}} </button>
     </ul>
   </ng-template>
 
