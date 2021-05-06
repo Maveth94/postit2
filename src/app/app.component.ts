@@ -41,7 +41,7 @@ export class AppComponent {
     this.obj
       .postData(this.postItArr)
       .subscribe(
-        (postItArr: object) => {},
+        (postItArr: Array<postIt>) => {},
         err => console.error("Observer got an error: " + err)
       );
     console.log(this.postItArr);
