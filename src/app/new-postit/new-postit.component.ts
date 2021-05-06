@@ -18,7 +18,7 @@ export class NewPostitComponent implements OnInit {
   nImp: boolean = false;
   */
 
-  conferma(nTit: string, nMess: string, nImp: string) {
+  conferma(nTit: string, nMess: string, nImp: boolean) {
     this.newPost = new postIt();
     this.newPost.titolo = nTit;
     this.newPost.mess = nMess;
