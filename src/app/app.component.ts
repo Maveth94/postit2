@@ -4,6 +4,7 @@ import { ChuckService } from "./postit.service";
 export class postIt {
   titolo: string;
   mess: string;
+  imp: boolean;
 }
 
 @Component({
