@@ -51,7 +51,6 @@ export class AppComponent {
     this.selezione1.imp = _imp;
     this.index = _num;
     this.postData();
-
     //console.log(this.postItArr);
   }
 
