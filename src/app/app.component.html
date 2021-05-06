@@ -23,6 +23,10 @@
 <ul *ngFor="let postIt of postItArr">
   <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
 </ul>
+
 <hr />
+
+
+
 
 <app-new-postit [selezioneA]="selezione2" (newPostEvent)="addPost($event)"> </app-new-postit>
