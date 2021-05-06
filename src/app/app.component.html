@@ -21,7 +21,7 @@
   Cliccare sul titolo per leggere il contenuto
 </p>
 <ul *ngFor="let postIt of postItArr">
-  <button (click) = "leggiMess(postIt.titolo, postIt.mess, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+  <button (click) = "leggiMess(postIt.titolo, postIt.mess)"> {{postIt.titolo}} </button>
 </ul>
 <hr />
 

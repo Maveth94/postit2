@@ -4,6 +4,7 @@ import { ChuckService } from "./postit.service";
 export class postIt {
   titolo: string;
   mess: string;
+  imp: boolean;
 }
 
 @Component({
@@ -16,47 +17,29 @@ export class AppComponent {
 
   postItArr: Array<postIt> = [];
 
-  /*
-  PostIt1: postIt = {
-    titolo: "Ciao1",
-    mess: "come va"
-  };
-
-  PostIt2: postIt = {
-    titolo: "Ciao2",
-    mess: "sglfha"
-  };*/
-
   constructor(private obj: ChuckService) {}
 
   GetData() {
     this.obj.getData().subscribe(
       (x: any) => {
-        console.log(x);
         this.postItArr = x;
-        //console.log(this.postItArr);
       },
       err => console.error("Observer got an error: " + err)
     );
   }
 
-  ObjectX = this.GetData();
+  Data = this.GetData();
 
   selezione1: postIt = new postIt();
   selezione2: number = 0;
   index: number = -1;
 
-  leggiMess(_title: string, _mess: string, _num: number) {
+  leggiMess(_title: string, _mess: string) {
     this.selezione1.titolo = _title;
     this.selezione1.mess = _mess;
-    this.index = _num;
   }
 
   addPost(newPost: postIt) {
-    //forse devo creare un oggetto tipo postIt
-    //qui faccio il subscribe
-    //poi faccio push nell'array
-
     this.postItArr.push(newPost);
     this.obj
       .postData(this.postItArr)
