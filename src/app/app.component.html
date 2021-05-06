@@ -4,7 +4,8 @@
   <button id="New" (click) = "azzera()" (click) = "creaPost()" >Crea Nuovo</button>
   <br />
   <br />
-  <button (click)= "impor()" id="Importanti">Visualizza importanti</button>
+  <button (click)= "impor()">Visualizza importanti</button>
+  <button (click)= "tutti()">Visualizza tutti</button>
 </ul>
 
 <hr />
@@ -20,9 +21,16 @@
 <p>
   Cliccare sul titolo per leggere il contenuto
 </p>
-<ul *ngFor="let postIt of postItArr">
+<div *ngIf="soloImp == false; else other_content">
+   <ul *ngFor="let postIt of postItArr">
   <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
-</ul>
+  </ul>
+</div>
+<ng-template #other_content>
+  <ul *ngFor="let postIt of postItArrImp">
+    <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+  </ul>
+</ng-template>
 
 <hr />
 

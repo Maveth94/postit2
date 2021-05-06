@@ -18,6 +18,11 @@ export class AppComponent {
   postItArr: Array<postIt> = [];
   postItArrImp: Array<postIt> = [];
 
+  selezione1: postIt = new postIt();
+  selezione2: number = 0;
+  index: number = -1;
+  soloImp: boolean = false;
+
   constructor(private obj: ChuckService) {}
 
   getData() {
@@ -30,10 +35,6 @@ export class AppComponent {
   }
 
   Data = this.getData();
-
-  selezione1: postIt = new postIt();
-  selezione2: number = 0;
-  index: number = -1;
 
   leggiMess(_title: string, _mess: string, _imp: boolean, _num: number) {
     this.selezione1.titolo = _title;
@@ -61,12 +62,18 @@ export class AppComponent {
   }
 
   impor() {
+    this.soloImp = true;
     for (let post of this.postItArr) {
       if (post.imp == true) {
         this.postItArrImp.push(post);
       }
     }
     console.log(this.postItArrImp);
+  }
+
+  tutti() {
+    this.postItArrImp = [];
+    this.soloImp = false;
   }
 
   creaPost() {
