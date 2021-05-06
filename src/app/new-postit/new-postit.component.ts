@@ -22,6 +22,7 @@ export class NewPostitComponent implements OnInit {
     this.newPost = new postIt();
     this.newPost.titolo = nTit;
     this.newPost.mess = nMess;
+
     //ho dovuto fare un casr altrimenti l'elemento mi veniva passato come HTMLElement
     //quindi senza l'attributo value
     //this.nTit = (<HTMLInputElement>document.getElementById("nTit")).value;
