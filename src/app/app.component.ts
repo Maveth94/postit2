@@ -34,9 +34,10 @@ export class AppComponent {
   selezione2: number = 0;
   index: number = -1;
 
-  leggiMess(_title: string, _mess: string, _num: number) {
+  leggiMess(_title: string, _mess: string, _imp: boolean, _num: number) {
     this.selezione1.titolo = _title;
     this.selezione1.mess = _mess;
+    this.selezione1.imp = _imp;
     this.index = _num;
     this.obj
       .postData(this.postItArr)
