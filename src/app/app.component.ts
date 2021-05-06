@@ -29,11 +29,12 @@ export class AppComponent {
 
   constructor(private obj: ChuckService) {}
 
-  getData() {
+  GetData() {
     this.obj.getData().subscribe(
       (x: any) => {
+        console.log(x);
         this.postItArr = x;
-        console.log(this.postItArr);
+        //console.log(this.postItArr);
       },
       err => console.error("Observer got an error: " + err)
     );
