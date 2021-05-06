@@ -1,4 +1,5 @@
 import { Component, VERSION } from "@angular/core";
+import { findParentClassDeclaration } from "@angular/core/schematics/utils/typescript/class_declaration";
 import { ChuckService } from "./postit.service";
 
 export class postIt {
@@ -16,7 +17,6 @@ export class AppComponent {
   name = "Post-it";
 
   postItArr: Array<postIt> = [];
-  postItArrImp: Array<postIt> = [];
 
   constructor(private obj: ChuckService) {}
 
@@ -34,6 +34,7 @@ export class AppComponent {
   selezione1: postIt = new postIt();
   selezione2: number = 0;
   index: number = -1;
+  visImp: boolean = false;
 
   leggiMess(_title: string, _mess: string, _imp: boolean, _num: number) {
     this.selezione1.titolo = _title;
@@ -61,12 +62,13 @@ export class AppComponent {
   }
 
   impor() {
-    for (let post of this.postItArr) {
-      if (post.imp == true) {
-        this.postItArrImp.push(post);
-      }
+    if (this.visImp == true){
+      this.visImp = false;
     }
-    console.log(this.postItArrImp);
+    if (this.visImp == false){
+      this.visImp = true;
+    }
+    
   }
 
   creaPost() {
