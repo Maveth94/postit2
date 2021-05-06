@@ -40,6 +40,8 @@ export class AppComponent {
     );
   }
 
+  ObjectX = this.GetData();
+
   selezione1: postIt = new postIt();
   selezione2: number = 0;
   index: number = -1;
