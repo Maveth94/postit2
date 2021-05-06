@@ -11,13 +11,6 @@ export class NewPostitComponent implements OnInit {
   @Output() newPostEvent = new EventEmitter<postIt>();
   newPost: postIt;
 
-  /*
-
-  nTit: string = "";
-  nMess: string = "";
-  nImp: boolean = false;
-  */
-
   conferma(nTit: string, nMess: string, nImp: boolean) {
     this.newPost = new postIt();
     this.newPost.titolo = nTit;
