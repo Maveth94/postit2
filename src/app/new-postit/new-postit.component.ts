@@ -13,15 +13,17 @@ export class NewPostitComponent implements OnInit {
 
   nTit: string = "";
   nMess: string = "";
+  nImp: boolean = false;
 
   conferma() {
     this.newPost = new postIt();
-    //console.log(this.newPost.titolo);
     //ho dovuto fare un casr altrimenti l'elemento mi veniva passato come HTMLElement
     //quindi senza l'attributo value
     this.nTit = (<HTMLInputElement>document.getElementById("nTit")).value;
     //console.log("titolo: " + this.nTit);
     this.nMess = (<HTMLInputElement>document.getElementById("nMess")).value;
+    console.log(<HTMLInputElement>document.getElementById("check")).value);
+    this.nImp = (<HTMLInputElement>document.getElementById("check")).value;
     this.newPost.titolo = this.nTit;
     this.newPost.mess = this.nMess;
     if (
