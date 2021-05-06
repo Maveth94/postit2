@@ -4,7 +4,7 @@
   <button id="New" (click) = "azzera()" (click) = "creaPost()" >Crea Nuovo</button>
   <br />
   <br />
-  <button (click)= "impor()">Visualizza importanti</button>
+  <button (click)= "impor()" id="visImp">Visualizza importanti</button>
   <!--
   <button (click)= "tutti()">Visualizza tutti</button>
 </ul>
@@ -13,7 +13,7 @@
   <hr />
 
   Qui verrà visualizzato il messaggio del post-it selezionato.
-  <div *ngIf="soloImp == 1; else content1">
+  <div *ngIf="soloImp == 0; else content1">
     <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr"> </app-read-postit>
   </div>
   <ng-template #content1>
@@ -25,7 +25,7 @@
   <p>
     Cliccare sul titolo per leggere il contenuto
   </p>
-  <div *ngIf="soloImp == 1; else other_content">
+  <div *ngIf="soloImp == 0; else other_content">
     <ul *ngFor="let postIt of postItArr">
       <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
     </ul>
