@@ -22,7 +22,7 @@ manca: ottenere chiavi per cambiare contenuto
   </app-read-postit>
 </p>
 
- 
+
 <hr />
 
 <p>
@@ -32,8 +32,8 @@ manca: ottenere chiavi per cambiare contenuto
 <div *ngIf="visImp == false ;else other_content">
   <ul *ngFor="let postIt of postItArr">
     <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
-
-  <button (click) = "delete(postItArr.indexOf(postIt))"> Cancella </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click) = "delete(postItArr.indexOf(postIt))"> Cancella </button>
 
   </ul>
 </div>
@@ -42,13 +42,12 @@ manca: ottenere chiavi per cambiare contenuto
   <ul *ngFor="let postIt of postItArr">
     <div *ngIf="postIt.imp == true">
       <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button (click) = "delete(postItArr.indexOf(postIt))"> Cancella </button>
     </div>
   </ul>
 </ng-template>
 
 <hr />
-
-
-
 
 <app-new-postit [selezioneA]="selezione2" (newPostEvent)="addPost($event)"> </app-new-postit>
