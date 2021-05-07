@@ -42,14 +42,14 @@ export class AppComponent {
 
   selezione1: postIt = new postIt();
   selezione2: number = 0;
-  index: number = -1;
+  //index: number = -1;
   visImp: boolean = false;
 
   leggiMess(_title: string, _mess: string, _imp: boolean, _num: number) {
     this.selezione1.titolo = _title;
     this.selezione1.mess = _mess;
     this.selezione1.imp = _imp;
-    this.index = _num;
+    //this.index = _num;
     this.postData();
     //console.log(this.postItArr);
   }
@@ -70,6 +70,12 @@ export class AppComponent {
       document.getElementById('Importanti').innerHTML = 'Visualizza tutti';
       //console.log(this.visImp);
     }
+  }
+
+  delete(_index: number) {
+    this.postItArr.splice(_index, 1);
+    //this.selezioneC.titolo = undefined;
+    this.postData();
   }
 
   creaPost() {

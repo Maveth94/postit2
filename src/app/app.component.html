@@ -18,11 +18,11 @@ manca: ottenere chiavi per cambiare contenuto
 
 <p>
   Qui verrà visualizzato il messaggio del post-it selezionato.
-  <app-read-postit [selezioneC]="selezione1" [index]="index" [postItArr]="postItArr">
+  <app-read-postit [selezioneC]="selezione1" [postItArr]="postItArr">
   </app-read-postit>
 </p>
 
-
+ 
 <hr />
 
 <p>
@@ -32,6 +32,9 @@ manca: ottenere chiavi per cambiare contenuto
 <div *ngIf="visImp == false ;else other_content">
   <ul *ngFor="let postIt of postItArr">
     <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+
+  <button (click) = "delete(postItArr.indexOf(postIt))"> Cancella </button>
+
   </ul>
 </div>
 
