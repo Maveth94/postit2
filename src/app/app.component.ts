@@ -1,6 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import { findParentClassDeclaration } from '@angular/core/schematics/utils/typescript/class_declaration';
-import { ChuckService } from './postit.service';
+import { WebService } from './postit.service';
 
 export class postIt {
   titolo: string;
@@ -15,10 +15,10 @@ export class postIt {
 })
 export class AppComponent {
   name = 'Post-it';
-
+  main: Boolean = false;
   postItArr: Array<postIt> = [];
 
-  constructor(private obj: ChuckService) {}
+  constructor(private obj: WebService) {}
 
   getData() {
     this.obj.getData().subscribe(
@@ -78,5 +78,26 @@ export class AppComponent {
 
   azzera() {
     this.selezione2 = 0;
+  }
+
+  getKey(k: string) {
+    let url = this.obj.apiURL;
+    this.obj.apiURL = url.slice(0, 25) + k + url.slice(25);
+    console.log(this.obj.apiURL);
+    //this.showTitle();
+    this.main = true;
+    //this.nome = k;
+  }
+
+  newKey(k: string) {
+    this.obj.Key().subscribe(
+      (k: any) => {
+        let key = k.split('/')[3];
+        this.obj.apiKey = key;
+        console.log(key);
+        this.getKey(key);
+      },
+      err => console.error('Observer got an error: ' + err)
+    );
   }
 }

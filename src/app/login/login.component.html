@@ -1,0 +1,5 @@
+<b>Inserisci la tua chiave:</b>
+<input #key/>
+<button (click)="getKey(key.value); key.value=''">Entra</button>
+<br>
+<b>Oppure:</b> <button (click)="newKey()">Richiedi la tua chiave</button>
