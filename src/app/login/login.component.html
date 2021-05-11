@@ -1,10 +1,10 @@
 <p>Inserisci il tuo codice:</p>
-<input #key/>
-<button (click)="getKey(key.value); key.value=''">LogIn</button>
+<input #keyAcc/>
+<button (click)="getKey(keyAcc.value); keyAcc.value=''">LogIn</button>
 <br>
 
 <br>
 <p>Richiedi nuova chiave</p> 
-<button #key (click)="newKey()">Richiedi la tua chiave</button>
+<button  (click)="newKey()">Richiedi la tua chiave</button>
 
 <p> chiave: </p>

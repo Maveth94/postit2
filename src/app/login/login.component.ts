@@ -6,7 +6,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   @Output() nuovoKeyEvent = new EventEmitter<string>();
   @Output() nuovoKEvent = new EventEmitter<string>();
   constructor() {}
@@ -15,9 +14,8 @@ export class LoginComponent implements OnInit {
   }
   newKey() {
     this.nuovoKEvent.emit();
+    console.log(this.nuovoKEvent.emit());
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
