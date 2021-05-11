@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { postIt } from './app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class WebService {
     return this.http.get(this.apiURL);
   }
 
-  public postData(obj: Object): Observable<any> {
+  public postData(obj: any): Observable<any> {
     return this.http.post(this.apiURL, obj);
   }
 
