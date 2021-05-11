@@ -21,12 +21,13 @@ export class AppComponent {
   constructor(private obj: WebService) {}
 
   getData() {
+    console.log(this.obj);
     this.obj.getData().subscribe(
       (x: any) => {
         console.log(x);
         this.postItArr = x;
       },
-      err => console.error('Observer getData() got an error: ' + this.obj)
+      err => console.error('Observer getData() got an error: ' + err)
     );
   }
 

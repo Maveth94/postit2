@@ -19,6 +19,11 @@ export class WebService {
     return this.http.post(this.apiURL, obj);
   }
 
+/*
+  public getData(CityName: string): Observable<Object> {
+    return this.http.get(this.apiURL+'?key='+this.apiKEY+'&city='+CityName);
+  }*/
+
   public Key() {
     return this.http.post('https://api.keyvalue.xyz/new/myKey', '', {
       responseType: 'text'
