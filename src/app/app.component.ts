@@ -17,6 +17,7 @@ export class AppComponent {
   name = 'Post-it';
   main: Boolean = false;
   postItArr: Array<postIt> = [];
+  NKey: string;
 
   constructor(private obj: WebService) {}
 
@@ -87,13 +88,13 @@ export class AppComponent {
   logIn(k: string) {
     this.obj.apiKey = k;
     this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
-    console.log(this.obj.apiTot);
+    //console.log(this.obj.apiTot);
     this.obj.getData().subscribe(
       (x: any) => {
         for (let i in x) {
           this.postItArr.push(x[i]);
         }
-        console.log(this.postItArr);
+        //console.log(this.postItArr);
         this.main = true;
       },
       err => {
@@ -110,8 +111,9 @@ export class AppComponent {
     this.obj.Key().subscribe(
       (k: any) => {
         let key = k.split('/')[3];
+        this.NKey = key;
         this.obj.apiKey = key;
-        console.log(key);
+        //console.log(key);
       },
       err => console.error('Observer newKey got an error: ' + err)
     );
