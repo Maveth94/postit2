@@ -82,7 +82,13 @@ export class AppComponent {
     this.selezione2 = 0;
   }
 
-  showTitle() {
+  showTitle() {}
+
+  logIn(k: string) {
+    this.obj.apiKey = k;
+    //console.log(this.obj.apiKey);
+    this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
+    console.log(this.obj.apiTot);
     this.obj.getData().subscribe(
       (p: any) => {
         console.log('uffix');
@@ -93,14 +99,6 @@ export class AppComponent {
       },
       err => console.error('Observer got an error: ' + err)
     );
-  }
-
-  logIn(k: string) {
-    this.obj.apiKey = k;
-    //console.log(this.obj.apiKey);
-    this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
-    console.log(this.obj.apiTot);
-    this.showTitle();
     this.main = true;
     /*
     this.obj.getData().subscribe(
