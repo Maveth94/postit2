@@ -85,7 +85,7 @@ export class AppComponent {
     this.obj.apiURL = url.slice(0, 25) + k + url.slice(25);
     console.log(this.obj.apiURL);
     //this.showTitle();
-    //this.main = true;
+    this.main = true;
     //this.nome = k;
   }
 
