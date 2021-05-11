@@ -92,14 +92,21 @@ export class AppComponent {
       (x: any) => {
         for (let i in x) {
           this.postItArr.push(x[i]);
-          
         }
         console.log(this.postItArr);
+        this.main = true;
       },
-      err => console.error('Observer got an error: ' + err)
+      err => {
+        if (err.status === 400){
+          console.error('Observer got an error: ' + err);
+        }
+        else {
+          this.main = true;
+        }
+        
+      }
     );
-    this.main = true;
-    
+    //this.main = true;
   }
 
   newKey(k: string) {
