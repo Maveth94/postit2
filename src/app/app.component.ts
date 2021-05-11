@@ -26,7 +26,7 @@ export class AppComponent {
         console.log(x);
         this.postItArr = x;
       },
-      err => console.error('Observer getData() got an error: ' + err)
+      err => console.error('Observer getData() got an error: ' + this.obj)
     );
   }
 
