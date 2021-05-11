@@ -1,7 +1,9 @@
-<b>Inserisci la tua chiave:</b>
+<p>Inserisci il tuo codice:</p>
 <input #key/>
 <button (click)="getKey(key.value); key.value=''">LogIn</button>
 <br>
-<b>Oppure:</b> <button #key (click)="newKey()">Richiedi la tua chiave</button>
+
+<br>
+<p>Richiedi nuova chiave</p> <button #key (click)="newKey()">Richiedi la tua chiave</button>
 
 <p> chiave: </p>
