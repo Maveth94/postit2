@@ -25,7 +25,7 @@ export class AppComponent {
       (x: any) => {
         this.postItArr = x;
       },
-      err => console.error('Observer got an error: ' + err)
+      err => console.error('Observer getData() got an error: ' + err)
     );
   }
 
@@ -34,7 +34,7 @@ export class AppComponent {
       .postData(this.postItArr)
       .subscribe(
         (postItArr: Array<postIt>) => {},
-        err => console.error('Observerdfgvd got an error: ' + err)
+        err => console.error('Observer  postData() got an error: ' + err)
       );
   }
 
@@ -98,7 +98,7 @@ export class AppComponent {
         return key;
         //this.getKey(key);
       },
-      err => console.error('Observer got an error: ' + err)
+      err => console.error('Observer newKey got an error: ' + err)
     );
   }
 }
