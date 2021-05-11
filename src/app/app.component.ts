@@ -82,14 +82,17 @@ export class AppComponent {
     this.selezione2 = 0;
   }
 
-  logIn(k: string) {
-    console.log(k);
-    this.obj.getData(k).subscribe(
+  logIn() {
+    //console.log(k);
+    this.obj.getData().subscribe(
       (x: any) => {
         console.log(x);
         this.postItArr = x;
       },
-      err => console.error('Observer getData() got an error: ' + err)
+      err => {
+        console.log(this.obj.getData());
+        console.error('Observer getData() got an error: ' + err);
+      }
     );
 
     /*
@@ -107,7 +110,7 @@ export class AppComponent {
     this.obj.Key().subscribe(
       (k: any) => {
         let key = k.split('/')[3];
-        //this.obj.apiKey = key;
+        this.obj.apiKey = key;
         console.log(key);
         //return key;
         //this.getKey(key);
