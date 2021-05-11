@@ -22,7 +22,7 @@ export class WebService {
   }
 
   public postData(obj: Object): Observable<Object> {
-    return this.http.post(this.apiURL, obj);
+    return this.http.post(this.apiTot, obj);
   }
 
   /*

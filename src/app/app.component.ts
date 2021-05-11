@@ -101,6 +101,7 @@ export class AppComponent {
     this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
     console.log(this.obj.apiTot);
     this.showTitle();
+    this.main = true;
     /*
     this.obj.getData().subscribe(
       (x: any) => {
