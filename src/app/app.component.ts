@@ -38,8 +38,6 @@ export class AppComponent {
       );
   }
 
-  Data = this.getData();
-
   selezione1: postIt = new postIt();
   selezione2: number = 0;
   visImp: boolean = false;
@@ -86,6 +84,7 @@ export class AppComponent {
     console.log(this.obj.apiURL);
     //this.showTitle();
     this.main = true;
+    this.getData();
     //this.nome = k;
   }
 
