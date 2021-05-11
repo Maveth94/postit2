@@ -82,18 +82,40 @@ export class AppComponent {
     this.selezione2 = 0;
   }
 
+  showTitle() {
+    this.obj.getData().subscribe(
+      (p: any) => {
+        console.log('uffix');
+        for (let i in p) {
+          this.postItArr.push(p[i]);
+        }
+        console.log(this.postItArr);
+      },
+      err => console.error('Observer got an error: ' + err)
+    );
+  }
+
   logIn(k: string) {
-    //console.log(k);
-    this.obj.getData(k).subscribe(
+    this.obj.apiKey = k;
+    //console.log(this.obj.apiKey);
+    this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
+    console.log(this.obj.apiTot);
+    this.showTitle();
+    /*
+    this.obj.getData().subscribe(
       (x: any) => {
-        console.log(x);
-        this.postItArr = x;
+        console.log('uffix');
+        for (let i in x) {
+          this.postItArr.push(x[i]);
+        }
+        console.log(this.obj);
       },
       err => {
         //console.log(this.obj.getData());
         console.error('Observer getData() got an error: ' + err);
       }
     );
+    */
 
     /*
     let url = this.obj.apiURL;
