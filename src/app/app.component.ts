@@ -20,7 +20,7 @@ export class AppComponent {
 
   constructor(private obj: WebService) {}
 
-/*
+  /*
   getData() {
     console.log(this.obj);
     this.obj.getData().subscribe(
@@ -83,6 +83,7 @@ export class AppComponent {
   }
 
   logIn(k: string) {
+    console.log(k);
     this.obj.getData(k).subscribe(
       (x: any) => {
         console.log(x);
@@ -103,7 +104,6 @@ export class AppComponent {
   }
 
   newKey(k: string) {
-
     this.obj.Key().subscribe(
       (k: any) => {
         let key = k.split('/')[3];
@@ -114,6 +114,5 @@ export class AppComponent {
       },
       err => console.error('Observer newKey got an error: ' + err)
     );
-    
   }
 }
