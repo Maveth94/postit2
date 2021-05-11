@@ -98,7 +98,7 @@ export class AppComponent {
         return key;
         //this.getKey(key);
       },
-      err => console.error('Observer got an error: ' + err)
+      err => console.error('Observavcver got an error: ' + err)
     );
   }
 }
