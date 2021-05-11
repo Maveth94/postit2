@@ -8,13 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class WebService {
   apiKey: string = '';
   apiURL: string = 'https://api.keyvalue.xyz/';
+  
 
   constructor(private http: HttpClient) {}
 
-  public getData(): Observable<Object> {
+  public getData(key: string): Observable<Object> {
     //console.log(this.apiURL + key + '/myKey');
     //this.apiKey = key;
-    return this.http.get(this.apiURL + this.apiKey + '/myKey');
+    return this.http.get(this.apiURL + key + '/myKey');
   }
 
   public postData(obj: Object): Observable<Object> {

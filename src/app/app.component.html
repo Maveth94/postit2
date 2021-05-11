@@ -5,7 +5,7 @@ manca: ottenere chiavi per cambiare contenuto
 
 
 <div *ngIf="main == false; else Main">
-  <app-login (nuovoKeyEvent)="logIn()" (nuovoKEvent)="newKey($event)
+  <app-login (nuovoKeyEvent)="logIn($event)" (nuovoKEvent)="newKey($event)
 "> </app-login>
 </div>
 

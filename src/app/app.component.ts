@@ -82,15 +82,15 @@ export class AppComponent {
     this.selezione2 = 0;
   }
 
-  logIn() {
+  logIn(k: string) {
     //console.log(k);
-    this.obj.getData().subscribe(
+    this.obj.getData(k).subscribe(
       (x: any) => {
         console.log(x);
         this.postItArr = x;
       },
       err => {
-        console.log(this.obj.getData());
+        //console.log(this.obj.getData());
         console.error('Observer getData() got an error: ' + err);
       }
     );
