@@ -20,6 +20,7 @@ export class AppComponent {
 
   constructor(private obj: WebService) {}
 
+/*
   getData() {
     console.log(this.obj);
     this.obj.getData().subscribe(
@@ -30,6 +31,7 @@ export class AppComponent {
       err => console.error('Observer getData() got an error: ' + err)
     );
   }
+  */
 
   postData() {
     this.obj
@@ -80,7 +82,16 @@ export class AppComponent {
     this.selezione2 = 0;
   }
 
-  getKey(k: string) {
+  logIn(k: string) {
+    this.obj.getData(k).subscribe(
+      (x: any) => {
+        console.log(x);
+        this.postItArr = x;
+      },
+      err => console.error('Observer getData() got an error: ' + err)
+    );
+
+    /*
     let url = this.obj.apiURL;
     this.obj.apiURL = url.slice(0, 25) + k + url.slice(25);
     console.log(this.obj.apiURL);
@@ -88,18 +99,21 @@ export class AppComponent {
     this.main = true;
     this.getData();
     //this.nome = k;
+    */
   }
 
   newKey(k: string) {
+
     this.obj.Key().subscribe(
       (k: any) => {
         let key = k.split('/')[3];
-        this.obj.apiKey = key;
+        //this.obj.apiKey = key;
         console.log(key);
-        return key;
+        //return key;
         //this.getKey(key);
       },
       err => console.error('Observer newKey got an error: ' + err)
     );
+    
   }
 }
