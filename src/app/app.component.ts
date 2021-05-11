@@ -86,45 +86,20 @@ export class AppComponent {
 
   logIn(k: string) {
     this.obj.apiKey = k;
-    //console.log(this.obj.apiKey);
     this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
     console.log(this.obj.apiTot);
     this.obj.getData().subscribe(
-      (p: any) => {
-        console.log('uffix');
-        for (let i in p) {
-          this.postItArr.push(p[i]);
+      (x: any) => {
+        for (let i in x) {
+          this.postItArr.push(x[i]);
+          
         }
         console.log(this.postItArr);
       },
       err => console.error('Observer got an error: ' + err)
     );
     this.main = true;
-    /*
-    this.obj.getData().subscribe(
-      (x: any) => {
-        console.log('uffix');
-        for (let i in x) {
-          this.postItArr.push(x[i]);
-        }
-        console.log(this.obj);
-      },
-      err => {
-        //console.log(this.obj.getData());
-        console.error('Observer getData() got an error: ' + err);
-      }
-    );
-    */
-
-    /*
-    let url = this.obj.apiURL;
-    this.obj.apiURL = url.slice(0, 25) + k + url.slice(25);
-    console.log(this.obj.apiURL);
-    //this.showTitle();
-    this.main = true;
-    this.getData();
-    //this.nome = k;
-    */
+    
   }
 
   newKey(k: string) {
@@ -133,8 +108,6 @@ export class AppComponent {
         let key = k.split('/')[3];
         this.obj.apiKey = key;
         console.log(key);
-        //return key;
-        //this.getKey(key);
       },
       err => console.error('Observer newKey got an error: ' + err)
     );
