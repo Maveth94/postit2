@@ -34,7 +34,7 @@ export class AppComponent {
       .postData(this.postItArr)
       .subscribe(
         (postItArr: Array<postIt>) => {},
-        err => console.error('Observer got an error: ' + err)
+        err => console.error('Observerdfgvd got an error: ' + err)
       );
   }
 
@@ -98,7 +98,7 @@ export class AppComponent {
         return key;
         //this.getKey(key);
       },
-      err => console.error('Observavcver got an error: ' + err)
+      err => console.error('Observer got an error: ' + err)
     );
   }
 }
