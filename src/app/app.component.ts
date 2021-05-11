@@ -97,16 +97,13 @@ export class AppComponent {
         this.main = true;
       },
       err => {
-        if (err.status === 400){
-          console.error('Observer got an error: ' + err);
-        }
-        else {
+        if (err.status === 400) {
+          console.error('Wrong pass ' + err);
+        } else {
           this.main = true;
         }
-        
       }
     );
-    //this.main = true;
   }
 
   newKey(k: string) {
