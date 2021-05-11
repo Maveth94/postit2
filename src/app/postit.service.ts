@@ -11,11 +11,11 @@ export class WebService {
 
   constructor(private http: HttpClient) {}
 
-  public getData(): Observable<any> {
+  public getData(): Observable<Object> {
     return this.http.get(this.apiURL);
   }
 
-  public postData(obj: any): Observable<any> {
+  public postData(obj: Object): Observable<Object> {
     return this.http.post(this.apiURL, obj);
   }
 
