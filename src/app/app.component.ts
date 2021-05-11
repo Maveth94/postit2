@@ -23,6 +23,7 @@ export class AppComponent {
   getData() {
     this.obj.getData().subscribe(
       (x: any) => {
+        console.log(x);
         this.postItArr = x;
       },
       err => console.error('Observer getData() got an error: ' + err)
