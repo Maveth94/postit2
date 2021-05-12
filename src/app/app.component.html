@@ -17,8 +17,6 @@ manca: ottenere chiavi per cambiare contenuto
     <br />
     <button (click)= "impor()" id="Importanti">Visualizza importanti</button>
     <br />
-    <br />
-    <button (click)= "funSelez(-1)">Esci</button>
   </ul>
 
   <hr />
@@ -58,5 +56,8 @@ manca: ottenere chiavi per cambiare contenuto
 
   <app-new-postit [selezioneA]="selezione" (newPostEvent)="addPost($event)" (azzera)="funSelez($event)">
   </app-new-postit>
+
+  <br />
+    <button (click)= "funSelez(-1)">Esci</button>
 
 </ng-template>

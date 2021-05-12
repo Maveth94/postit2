@@ -75,9 +75,10 @@ export class AppComponent {
 
       case -1: {
         this.selezione = num;
-        //this.main = false;
         this.NKey = '';
         this.Err = false;
+        this.postItArr = [];
+
         break;
       }
 
