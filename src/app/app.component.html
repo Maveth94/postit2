@@ -56,8 +56,11 @@ manca: ottenere chiavi per cambiare contenuto
 
   <app-new-postit [selezioneA]="selezione" (newPostEvent)="addPost($event)" (azzera)="funSelez($event)">
   </app-new-postit>
+  <br />
+  <hr />
+
 
   <br />
-    <button (click)= "funSelez(-1)">Esci</button>
+  <button (click)= "funSelez(-1)">Esci</button>
 
 </ng-template>
