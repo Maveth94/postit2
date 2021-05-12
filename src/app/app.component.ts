@@ -99,10 +99,9 @@ export class AppComponent {
         this.main = true;
       },
       err => {
-        if (err.status === 400) {
-          this.Err = true;
-          console.error('Wrong pass ' + err);
-
+        if (err.status === 404) {
+          return this.Err = true;
+          //console.error('Wrong pass ' + err);
         } else {
           this.main = true;
         }

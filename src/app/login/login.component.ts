@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   @Output() nuovoKeyEvent = new EventEmitter<string>();
   @Output() nuovoKEvent = new EventEmitter<string>();
   @Input() NKey: string;
+  @Input() Error: boolean;
 
   constructor() {}
 
