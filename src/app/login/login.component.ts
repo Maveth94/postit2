@@ -1,4 +1,3 @@
-
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -6,12 +5,12 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent implements OnInit {
   @Output() nuovoKeyEvent = new EventEmitter<string>();
   @Output() nuovoKEvent = new EventEmitter<string>();
   @Input() NKey: string;
   @Input() Error: boolean;
+  @Output() Accesso = new EventEmitter<number>();
 
   constructor() {}
 

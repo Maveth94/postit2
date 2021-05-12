@@ -15,14 +15,12 @@ export class postIt {
 })
 export class AppComponent {
   name = 'Post-it';
-  //main: Boolean = false;
-  main: Boolean = true;
+  //main: num = -1;
   postItArr: Array<postIt> = [];
   NKey: string;
   Err: boolean = false;
-  selezione: number = 0;
+  selezione: number = -1;
   postSelez: postIt = new postIt();
-  selezione2: number = 0;
   visImp: boolean = false;
 
   constructor(private obj: WebService) {}
@@ -59,64 +57,52 @@ export class AppComponent {
     }
   }
 
-
   delete(_index: number) {
     this.postItArr.splice(_index, 1);
     this.postData();
   }
 
-  funSelez(num: number){
-    switch(num) { 
-   case 1: { 
-      this.selezione = num;
-      break; 
-   } 
-   case  2 : { 
-      this.selezione = num;
-      break; 
-   } 
-   default: { 
-      this.selezione = num;
-      break; 
-   } 
-} 
-    
-  }
-/*
-  creaPost() {
-    this.selezione2 = 1;
-  }
-*/
-/*
-  azzera() {
-    this.selezione2 = 0;
-  }
-*/
+  funSelez(num: number) {
+    switch (num) {
+      case 1: {
+        this.selezione = num;
+        break;
+      }
+      case 2: {
+        this.selezione = num;
+        break;
+      }
 
-  esci() {
-    this.main = false;
-  }
+      case -1: {
+        this.selezione = num;
+        //this.main = false;
+        this.NKey = '';
+        this.Err = false;
+        break;
+      }
 
-  showTitle() {}
+      default: {
+        this.selezione = num;
+        break;
+      }
+    }
+  }
 
   logIn(k: string) {
     this.obj.apiKey = k;
     this.obj.apiTot = this.obj.apiURL + this.obj.apiKey + '/myKey';
-    //console.log(this.obj.apiTot);
     this.obj.getData().subscribe(
       (x: any) => {
         for (let i in x) {
           this.postItArr.push(x[i]);
         }
-        //console.log(this.postItArr);
-        this.main = true;
+        this.selezione = 0;
       },
       err => {
         if (err.status === 404 || err.status === 400) {
           return (this.Err = true);
-          //console.error('Wrong pass ' + err);
         } else {
-          this.main = true;
+          this.selezione = 0;
         }
       }
     );
@@ -128,7 +114,6 @@ export class AppComponent {
         let key = k.split('/')[3];
         this.NKey = key;
         this.obj.apiKey = key;
-        //console.log(key);
       },
       err => console.error('Observer newKey got an error: ' + err)
     );

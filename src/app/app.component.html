@@ -4,24 +4,21 @@ manca: ottenere chiavi per cambiare contenuto
 <h1>App Post-it</h1>
 
 
-<div *ngIf="main == false; else Main">
-  <app-login [Error]="this.Err" [NKey]="this.NKey" (nuovoKeyEvent)="logIn($event)" (nuovoKEvent)="newKey($event)
-"> </app-login>
+<div *ngIf="selezione == -1; else Main">
+  <app-login [Error]="this.Err" [NKey]="this.NKey" (nuovoKeyEvent)="logIn($event)" (nuovoKEvent)="newKey($event)">
+  </app-login>
 </div>
 
 <ng-template #Main>
 
   <ul name="butt">
-    <!--
-    <button id="New" (click) = "azzera()" (click) = "creaPost()" >Crea Nuovo</button>
-    -->
     <button id="New" (click) = "funSelez(1)" >Crea Nuovo</button>
     <br />
     <br />
     <button (click)= "impor()" id="Importanti">Visualizza importanti</button>
     <br />
     <br />
-    <button (click)= "esci(); this.Err = false; this.NKey = '' ">Esci</button>
+    <button (click)= "funSelez(-1)">Esci</button>
   </ul>
 
   <hr />
