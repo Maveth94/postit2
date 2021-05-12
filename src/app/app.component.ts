@@ -15,10 +15,12 @@ export class postIt {
 })
 export class AppComponent {
   name = 'Post-it';
-  main: Boolean = false;
+  //main: Boolean = false;
+  main: Boolean = true;
   postItArr: Array<postIt> = [];
   NKey: string;
   Err: boolean = false;
+  selezione: number = 0;
   selezione1: postIt = new postIt();
   selezione2: number = 0;
   visImp: boolean = false;
@@ -57,18 +59,39 @@ export class AppComponent {
     }
   }
 
+
   delete(_index: number) {
     this.postItArr.splice(_index, 1);
     this.postData();
   }
 
+  funSelez(num: number){
+    switch(num) { 
+   case 1: { 
+      this.selezione = num;
+      break; 
+   } 
+   case  2 : { 
+      this.selezione = num;
+      break; 
+   } 
+   default: { 
+      this.selezione = num;
+      break; 
+   } 
+} 
+    
+  }
+/*
   creaPost() {
     this.selezione2 = 1;
   }
-
+*/
+/*
   azzera() {
     this.selezione2 = 0;
   }
+*/
 
   esci() {
     this.main = false;
