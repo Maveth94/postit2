@@ -21,7 +21,7 @@ export class AppComponent {
   NKey: string;
   Err: boolean = false;
   selezione: number = 0;
-  selezione1: postIt = new postIt();
+  postSelez: postIt = new postIt();
   selezione2: number = 0;
   visImp: boolean = false;
 
@@ -37,9 +37,9 @@ export class AppComponent {
   }
 
   leggiMess(_title: string, _mess: string, _imp: boolean, _num: number) {
-    this.selezione1.titolo = _title;
-    this.selezione1.mess = _mess;
-    this.selezione1.imp = _imp;
+    this.postSelez.titolo = _title;
+    this.postSelez.mess = _mess;
+    this.postSelez.imp = _imp;
     this.postData();
   }
 

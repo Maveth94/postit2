@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { postIt } from '../app.component';
 
 @Component({
@@ -7,13 +7,15 @@ import { postIt } from '../app.component';
   styleUrls: ['./read-postit.component.css']
 })
 export class ReadPostitComponent implements OnInit {
-  @Input() selezioneC: postIt;
-  @Input() postItArr: Array<postIt>;
+  @Input() selezioneC: number;
+  @Input() postSelez: postIt;
+  @Output() azzera = new EventEmitter<number>();
 
   constructor() {}
 
   clean() {
-    this.selezioneC.titolo = undefined;
+    this.azzera.emit(0);
+    //this.selezioneC.titolo = undefined;
   }
 
   ngOnInit() {}

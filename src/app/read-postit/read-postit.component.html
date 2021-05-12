@@ -1,5 +1,5 @@
-<p *ngIf="selezioneC.titolo !== undefined">
-  Nel post-it {{selezioneC.titolo}} c'è scritto: <br> {{selezioneC.mess}}
-  <br> importante: {{selezioneC.imp}}<br><br>
+<p *ngIf="selezioneC == 2">
+  Nel post-it {{postSelez.titolo}} c'è scritto: <br> {{postSelez.mess}}
+  <br> importante: {{postSelez.imp}}<br><br>
   <button (click)="clean()">Chiudi</button>
 </p>

@@ -28,7 +28,7 @@ manca: ottenere chiavi per cambiare contenuto
 
   <p>
     Qui verrà visualizzato il messaggio del post-it selezionato.
-    <app-read-postit [selezioneC]="selezione1" [postItArr]="postItArr">
+    <app-read-postit [selezioneC]="selezione" [postSelez]="postSelez" (azzera)="funSelez($event)">
     </app-read-postit>
   </p>
 
@@ -39,19 +39,18 @@ manca: ottenere chiavi per cambiare contenuto
     Cliccare sul titolo per leggere il contenuto
   </p>
 
-  <div *ngIf="visImp == false ;else other_content">
+  <div *ngIf=" visImp==false ;else other_content">
     <ul *ngFor="let postIt of postItArr">
-      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+      <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))" (click) = "funSelez(2)"> {{postIt.titolo}} </button>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <button (click) = "delete(postItArr.indexOf(postIt))"> Cancella </button>
-
     </ul>
   </div>
 
   <ng-template #other_content>
     <ul *ngFor="let postIt of postItArr">
       <div *ngIf="postIt.imp == true">
-        <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))"> {{postIt.titolo}} </button>
+        <button (click) = "leggiMess(postIt.titolo, postIt.mess,postIt.imp, postItArr.indexOf(postIt))" (click) = "funSelez(2)"> {{postIt.titolo}} </button>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <button (click) = "delete(postItArr.indexOf(postIt))"> Cancella </button>
       </div>

@@ -23,7 +23,6 @@ export class NewPostitComponent implements OnInit {
     ) {
       this.newPostEvent.emit(this.newPost);
       this.azzera.emit(0);
-      //this.selezioneA = 0;
     } else {
       alert('Dati mancanti o  scorretti, ritenta');
       return;
@@ -34,7 +33,6 @@ export class NewPostitComponent implements OnInit {
 
   annulla() {
     this.azzera.emit(0);
-    //this.selezioneA = 0;
   }
 
   ngOnInit() {}
