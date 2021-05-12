@@ -1,7 +1,3 @@
-/**
-1) Far sì che se la pass è sbagliata non accedi, 
-2) far il pulsante indietro nel main in modo che si possa inserire una nuova chiave
- */
 
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 

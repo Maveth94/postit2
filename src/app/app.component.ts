@@ -19,21 +19,11 @@ export class AppComponent {
   postItArr: Array<postIt> = [];
   NKey: string;
   Err: boolean = false;
+  selezione1: postIt = new postIt();
+  selezione2: number = 0;
+  visImp: boolean = false;
 
   constructor(private obj: WebService) {}
-
-  /*
-  getData() {
-    console.log(this.obj);
-    this.obj.getData().subscribe(
-      (x: any) => {
-        console.log(x);
-        this.postItArr = x;
-      },
-      err => console.error('Observer getData() got an error: ' + err)
-    );
-  }
-  */
 
   postData() {
     this.obj
@@ -43,10 +33,6 @@ export class AppComponent {
         err => console.error('Observer  postData() got an error: ' + err)
       );
   }
-
-  selezione1: postIt = new postIt();
-  selezione2: number = 0;
-  visImp: boolean = false;
 
   leggiMess(_title: string, _mess: string, _imp: boolean, _num: number) {
     this.selezione1.titolo = _title;
