@@ -15,7 +15,6 @@ export class postIt {
 })
 export class AppComponent {
   name = 'Post-it';
-  //main: num = -1;
   postItArr: Array<postIt> = [];
   NKey: string;
   Err: boolean = false;
