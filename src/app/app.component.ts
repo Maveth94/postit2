@@ -18,6 +18,7 @@ export class AppComponent {
   main: Boolean = false;
   postItArr: Array<postIt> = [];
   NKey: string;
+  Err: boolean;
 
   constructor(private obj: WebService) {}
 
@@ -99,7 +100,9 @@ export class AppComponent {
       },
       err => {
         if (err.status === 400) {
+          this.Err = true;
           console.error('Wrong pass ' + err);
+
         } else {
           this.main = true;
         }
