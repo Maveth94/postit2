@@ -84,6 +84,10 @@ export class AppComponent {
     this.selezione2 = 0;
   }
 
+  esci() {
+    this.main = false;
+  }
+
   showTitle() {}
 
   logIn(k: string) {

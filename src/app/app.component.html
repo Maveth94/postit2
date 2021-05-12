@@ -5,7 +5,7 @@ manca: ottenere chiavi per cambiare contenuto
 
 
 <div *ngIf="main == false; else Main">
-  <app-login [Error] = "this.Err" [NKey] = "this.NKey"  (nuovoKeyEvent)="logIn($event)" (nuovoKEvent)="newKey($event)
+  <app-login [Error]="this.Err" [NKey]="this.NKey" (nuovoKeyEvent)="logIn($event)" (nuovoKEvent)="newKey($event)
 "> </app-login>
 </div>
 
@@ -16,6 +16,9 @@ manca: ottenere chiavi per cambiare contenuto
     <br />
     <br />
     <button (click)= "impor()" id="Importanti">Visualizza importanti</button>
+    <br />
+    <br />
+    <button (click)= "esci(); this.Err = false ">Esci</button>
   </ul>
 
   <hr />

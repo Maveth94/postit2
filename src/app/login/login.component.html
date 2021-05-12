@@ -1,6 +1,6 @@
 <p>Inserisci la tua chiave:</p>
 <input #keyAcc/>
-<button (click)="getKey(keyAcc.value); keyAcc.value=''">LogIn</button>
+<button (click)="getKey(keyAcc.value); keyAcc.value=''; NKey ='' ">LogIn</button>
 <p *ngIf="Error == true" keyAcc.value=''>
   chiave inesistente, ritenta
 </p>
@@ -9,4 +9,5 @@
 <p>Richiedi nuova chiave</p>
 <button  (click)="newKey()">Richiedi la tua chiave</button>
 
-<p> chiave: {{NKey}}</p>
+<p> chiave:
+  {{NKey}}</p>
