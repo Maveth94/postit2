@@ -10,7 +10,6 @@ export class LoginComponent implements OnInit {
   @Output() nuovoKEvent = new EventEmitter<string>();
   @Input() NKey: string;
   @Input() Error: boolean;
-  @Output() Accesso = new EventEmitter<number>();
 
   constructor() {}
 
