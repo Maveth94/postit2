@@ -7,7 +7,7 @@ Il main passa comunica con i vari componenti attraverso uno switch(funSelez(num:
 Nel main vengono direttamente gestite la funzione per visualizzare i messaggi importanti attraverso un *ngIf con un boolean nell'html; i due blocchi dell'if/else funzionano allo stesso modo, solo che, se si sceglie di visualizzare solo i messaggi importanti si aggiunge un ulteriore if che manda la funzione di lettura solo se il boolean del postit indicato dall' *ngfor ha la variabile imp == true. Poi nel main vengono definite altre varie funzioni utili.
 Le altre due componenti vengono richiamate in maniera analoga, a seconda del valore che lo switch assegna alla variabile di selezione, consentendo all'*ngIf interno all'html delle due sottocomponenti di soddisfare la guardia apposita.
 In questo modo, quando nel main viene premuto il bottone "crea nuovo", si espande il blocco che consente di immettere i dati del nuovo postit; poi, premuto conferma, si rimandano i dati nel main attraverso un emitter, qui si invoca la funzione addPost(newPost: postIt) attraverso cui si aggiungono i dati all'array e si posta il nuovo array attraverso richiesta web. 
-Allo stesso modo il componente read postit si riferisce a quando, avendo una lista di postit, si clicca sul bottone con il titolo, ciò permette la visualizzazione del contenuto del post selezionato
+Allo stesso modo il componente read postit si riferisce a quando, avendo una lista di postit, si clicca sul bottone con il titolo, ciò permette la visualizzazione del contenuto del post selezionato.
 
 
 
