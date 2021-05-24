@@ -1,5 +1,4 @@
 import { Component, VERSION } from '@angular/core';
-import { findParentClassDeclaration } from '@angular/core/schematics/utils/typescript/class_declaration';
 import { WebService } from './postit.service';
 
 export class postIt {
