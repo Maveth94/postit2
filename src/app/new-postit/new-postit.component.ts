@@ -22,6 +22,7 @@ export class NewPostitComponent implements OnInit {
       this.newPost.mess !== ('' || ' ')
     ) {
       this.newPostEvent.emit(this.newPost);
+      console.log(this.newPostEvent.emit(this.newPost));
       this.azzera.emit(0);
     } else {
       alert('Dati mancanti o  scorretti, ritenta');
